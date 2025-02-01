@@ -22,6 +22,10 @@
     "react-toastify": "^11.0.2",
     "recharts": "^2.15.0",
     "styled-components": "^6.1.14",
+
+
+
+    
     "swr": "^2.3.0"
   },
   "scripts": {
