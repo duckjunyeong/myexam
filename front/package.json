@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=production craco start",
-    "build": "craco build",
+    "build": "cross-env NODE_ENV=production craco build",
     "test": "craco test"
   },
   "eslintConfig": {
