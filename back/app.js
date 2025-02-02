@@ -59,10 +59,9 @@ const sessionOption = {
   },
 };
 
-//if (prod) {
-//  sessionOption.cookie.secure = true;
-//  sessionOption.cookie.proxy = true;
-//}
+if (prod) {
+  sessionOption.cookie.proxy = true;
+}
 
 app.use(session(sessionOption));
 app.use(passport.initialize());
