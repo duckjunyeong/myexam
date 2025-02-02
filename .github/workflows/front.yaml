@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/front
+            cd /myexam/front
             sudo su
             git pull
             npm install
