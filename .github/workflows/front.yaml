@@ -18,11 +18,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            sudo su
             cd /home/ubuntu/myexam/front/
             git pull
-            npm install
-            npm run build
-            systemctl stop nginx
-            systemctl restart nginx
+            sudo npm install
+            sudo npm run build
+            sudo pkill nginx
+            sudo service nginx start
             
