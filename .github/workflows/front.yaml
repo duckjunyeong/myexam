@@ -19,6 +19,8 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/ubuntu/myexam/front/
+            sudo chown -R $USER:$USER .git
+            sudo chmod -R 777 .git
             git pull
             sudo npm install
             sudo npm run build
