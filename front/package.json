@@ -27,7 +27,7 @@
     "swr": "^2.3.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=production craco start",
+    "start": "craco start",
     "build": "cross-env NODE_ENV=production craco build",
     "test": "craco test"
   },

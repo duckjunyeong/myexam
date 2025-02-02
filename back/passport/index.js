@@ -21,6 +21,8 @@ module.exports = () => {
           },
         ],
       });
+      console.log("User");
+      console.log(User);
       done(null, user); // req.user
     } catch (error) {
       console.error(error);

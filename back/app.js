@@ -29,7 +29,6 @@ passportConfig();
 const prod = process.env.NODE_ENV === "production";
 
 if (prod) {
-  app.enable("trust proxy");
   app.use(morgan("combined"));
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(hpp());
