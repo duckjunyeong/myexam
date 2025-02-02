@@ -19,7 +19,10 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/ubuntu/front
+            sudo su
             git pull
             npm install
             npm run build
-            pm2 restart front
+            systemctl stop nginx
+            systemctl restart nginx
+            
