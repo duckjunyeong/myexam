@@ -1,0 +1,25 @@
+name: Front Cl
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_Front_Server:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: connect EC2 from ssh
+        uses: appleboy/ssh-action@1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/ubuntu/front
+            git pull
+            npm install
+            npm run build
+            pm2 restart front
