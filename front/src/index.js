@@ -9,7 +9,7 @@ import store from "store/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 axios.defaults.baseURL =
-  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "http://43.201.112.125";
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "http://43.203.236.58";
 
 root.render(
   <React.StrictMode>
