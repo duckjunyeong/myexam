@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Change permissions
-        run: |
-          sudo chown -R $USER:$USER $GITHUB_WORKSPACE
-          sudo chmod -R 777 $GITHUB_WORKSPACE
-
       - name: connect EC2 from ssh
         uses: appleboy/ssh-action@v1.2.0
         with:
@@ -26,6 +21,8 @@ jobs:
             cd /home/ubuntu/myexam
             sudo chown -R $USER:$USER .git
             sudo chmod -R 777 .git
+            sudo chown -R $USER:$USER .github
+            sudo chmod -R 777 .github
             git pull
             cd /home/ubuntu/myexam/front
             sudo npm install
