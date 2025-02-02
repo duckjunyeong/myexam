@@ -18,10 +18,11 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/myexam/front/
+            cd /home/ubuntu/myexam
             sudo chown -R $USER:$USER .git
             sudo chmod -R 777 .git
             git pull
+            cd /home/ubuntu/myexam/front
             sudo npm install
             sudo npm run build
             sudo pkill nginx
