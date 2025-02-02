@@ -23,6 +23,7 @@ jobs:
             sudo chmod -R 777 .git
             sudo chown -R $USER:$USER .github
             sudo chmod -R 777 .github
+            git reset --hard
             git pull
             cd /home/ubuntu/myexam/front
             sudo npm install
