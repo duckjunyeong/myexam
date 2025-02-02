@@ -29,9 +29,17 @@ passportConfig();
 const prod = process.env.NODE_ENV === "production";
 
 if (prod) {
-  app.use(morgan("combined"));
-  app.use(helmet({ contentSecurityPolicy: false }));
-  app.use(hpp());
+  app.use(morgan("dev"));
+  app.use(
+    cors({
+      origin: true,
+      credentials: true,
+      webSocket: true,
+    })
+  );
+  //app.use(morgan("combined"));
+  //app.use(helmet({ contentSecurityPolicy: false }));
+  //app.use(hpp());
 } else {
   app.use(morgan("dev"));
   app.use(
